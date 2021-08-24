@@ -12,7 +12,7 @@ export default class UsersController {
     return user;
   }
 
-  public async store({ request, response }: HttpContextContract) {
+  public async store({ request }: HttpContextContract) {
     const body = request.only(['email', 'password'])
 
     const user = await User.create(body)
